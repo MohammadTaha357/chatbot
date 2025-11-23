@@ -24,7 +24,7 @@ temperature = st.sidebar.slider( # fix the randomness of the response
 max_tokens = st.sidebar.slider( # max response length
     "Max Tokens", 50,300,150
 )
-
+clear=st.sidebar.button("Clear Chat")
 if "memory" not in st.session_state:
     # perssist memory across reruns
     st.session_state.memory = ConversationBufferMemory(
@@ -69,7 +69,8 @@ for role, text in st.session_state.history:
     else:
         st.chat_message("assistant").write(text) # assistant style
 
-
+if clear:
+    st.session_state.history=[]
 
 
 
