@@ -11,10 +11,10 @@ st.set_page_config(page_title=" 💬 Conversational Chatbot") # title in browser
 st.title("💬 Conversational Chatbot with Message History") # app header
 
 # sidebar control
-key=st.sidebar.text_input("Enter api key")
+key=st.sidebar.text_input("Enter Groq api key",type="password")
 model_name = st.sidebar.selectbox( 
     "Select Groq Model",
-    ["llama-3.3-70b-versatile ","moonshotai/kimi-k2-instruct-0905","openai/gpt-oss-120b"]
+    ["meta-llama/llama-4-maverick-17b-128e-instruct ","moonshotai/kimi-k2-instruct-0905","openai/gpt-oss-120b"]
     )
                                                                                                                 
 temperature = st.sidebar.slider( # fix the randomness of the response
